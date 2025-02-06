@@ -4,13 +4,12 @@
 
 ## The task
 Use any data structure of your choice to organize the following information
-	•	Your names
-	•	Your slack username
-	•	Your email
-	•	Your hobby
-	•	Your countries
-	•	Your discipline
-	•	Your preferred programming language
+- Your names
+- Your Slack username
+- Your email address
+- Your hobbies
+- Your countries of origin
+- Your preferred programming language
 
 ## What I did
 Used R programming language to perform the task.
