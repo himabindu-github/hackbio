@@ -3,7 +3,7 @@
 
 ## 1. Translate a DNA sequence to protein.
     This is a summary of the steps implemented
- - Creating a Named Vector for Codons: First a named vector, dna_codon_table, mapping each DNA codon to its corresponding amino acid was created.
+ - Created a translate Function: A function that takes a DNA sequence and translates it into a corresponding protein sequence. The function processes the DNA codons by mapping them to amino acids using a named vector(codon table).
 
  - Managing Case: Processed the DNA sequence by converting it to uppercase to maintain consistency.
 
