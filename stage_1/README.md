@@ -1,8 +1,8 @@
 #Stage_1 task: All about functions
 
 
-##1. Translate a DNA sequence to protein
-   This is a summary of the steps implemented
+##1. Translate a DNA sequence to protein.
+    This is a summary of the steps implemented
  - Creating a Named Vector for Codons: First a named vector, dna_codon_table, mapping each DNA codon to its corresponding amino acid was created.
 
  - Managing Case: Processed the DNA sequence by converting it to uppercase to maintain consistency.
