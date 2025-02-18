@@ -3,7 +3,7 @@ An open and virtual internship offering hands-on experience in bioinformatics, w
 
 **This repository showcases the work I contributed to during my internship.**
 ## Contributors:
-- **Himabindu Kumdam**
-    [Email](mailto:khbiitm@gmail.com)
-- 🔗 [LinkedIn](https://www.linkedin.com/in/himabindu-kumdam-88b2152b/)
+- Himabindu Kumdam
+ 📧 [Email](mailto:khbiitm@gmail.com)
+ 🔗 [LinkedIn](https://www.linkedin.com/in/himabindu-kumdam-88b2152b/)
   
