@@ -5,3 +5,5 @@ An open and virtual internship offering hands-on experience in bioinformatics, w
 ## Contributors:
 - **Himabindu Kumdam**
     [khbiitm@gmail.com](mailto:khbiitm@gmail.com)
+- 🔗 [LinkedIn: Your LinkedIn](www.linkedin.com/in/himabindu-kumdam-88b2152b/)
+  
