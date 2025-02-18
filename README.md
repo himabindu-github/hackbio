@@ -4,4 +4,4 @@ An open and virtual internship offering hands-on experience in bioinformatics, w
 **This repository showcases the work I contributed to during my internship.**
 ## Contributors:
 - **Himabindu Kumdam**
-   📧 [khbiitm@gmail.com](mailto:khbiitm@gmail.com)
+    [khbiitm@gmail.com](mailto:khbiitm@gmail.com)
