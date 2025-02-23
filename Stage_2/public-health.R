@@ -58,7 +58,7 @@ BMI <- hist(new.nhanes_data$BMI,
             breaks = pretty(new.nhanes_data$BMI, n = 10))
 Weight <- hist(new.nhanes_data$Weight, 
                main = "Weight", 
-               xlab = "Weight",
+               xlab = "Weight (kg)",
                col = "lightgreen",
                breaks = pretty(new.nhanes_data$Weight, n = 10))
 W_pounds <- hist(new.nhanes_data$Weight_pounds, 
@@ -90,7 +90,8 @@ sd_income <- sd(new.nhanes_data$Income) # 35554.86
 #################### visualize relationship ----
 # Visualize the relationship between weight and height 
 # Color the points by gender, diabetes, smoking status
-# old data with NA to avoid additional "unknown" groups in variables
+# uncleaned data with NA is used to avoid additional "unknown" groups in variables
+# na.rm = TRUE ignores NAs
 
 # table(factor(nhanes.df1$Gender))
 # table(factor(nhanes.df1$Diabetes))
@@ -98,22 +99,25 @@ sd_income <- sd(new.nhanes_data$Income) # 35554.86
 
 gen <-ggplot(nhanes.df1) +
   aes(x = Weight, y = Height, colour = Gender, group = Gender) +
-  geom_point(na.rm = TRUE) 
+  geom_point(na.rm = TRUE) +
+  labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Gender")#+
+  #geom_smooth( method = "lm")
   
 
 diab <- ggplot(nhanes.df1) +
   aes(x = Weight, y = Height, colour = Diabetes) +
   scale_color_manual(values = c("lightgray", "red"), na.translate = FALSE) +
-  geom_point(na.rm = TRUE, alpha = 0.5) 
+  geom_point(na.rm = TRUE) +
+  labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Diabetes status") 
   
 
 smok <- ggplot(nhanes.df1) +
   aes(x = Weight, y = Height, colour = SmokingStatus) +
   scale_color_manual(values = c("green", "blue", "red"), na.translate = FALSE) +
-  geom_point(na.rm = TRUE)
+  geom_point(na.rm = TRUE) +
+  labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Smoking status") 
 
-plot_grid(gen, diab, smok, ncol = 1)
-
+#plot_grid(gen, diab, smok, ncol = 3)
 
 #################### t-tests -----
 # t-test and make conclusions on the relationship between them based on P-Value
@@ -145,4 +149,5 @@ t_test_alc_rel <- t.test(AlcoholYear ~ RelationshipStatus, data = nhanes.df1)
 #2 Single                  63.5
 
 
+## github link : https://github.com/himabindu-github/hackbio/tree/main/Stage_2
 ###############################################
