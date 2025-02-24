@@ -150,4 +150,5 @@ t_test_alc_rel <- t.test(AlcoholYear ~ RelationshipStatus, data = nhanes.df1)
 
 
 ## github link : https://github.com/himabindu-github/hackbio/tree/main/Stage_2
+## linkedin post : https://www.linkedin.com/feed/update/urn:li:activity:7299658541093527553/
 ###############################################
