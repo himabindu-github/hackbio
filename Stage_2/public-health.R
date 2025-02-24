@@ -8,6 +8,7 @@ library(data.table)
 
 #################### Read data into R -----
 nhanes_data <- read.csv("nhanes.csv")
+nhanes.df1 <- copy(nhanes_data)
 
 #################### Details of the data -----
 
@@ -97,28 +98,54 @@ sd_income <- sd(new.nhanes_data$Income) # 35554.86
 # table(factor(nhanes.df1$Diabetes))
 # table(factor(nhanes.df1$SmokingStatus))
 
-gen <-ggplot(nhanes.df1) +
-  aes(x = Weight, y = Height, colour = Gender, group = Gender) +
-  geom_point(na.rm = TRUE) +
-  labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Gender")#+
-  #geom_smooth( method = "lm")
-  
 
-diab <- ggplot(nhanes.df1) +
-  aes(x = Weight, y = Height, colour = Diabetes) +
-  scale_color_manual(values = c("lightgray", "red"), na.translate = FALSE) +
-  geom_point(na.rm = TRUE) +
-  labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Diabetes status") 
-  
-
-smok <- ggplot(nhanes.df1) +
-  aes(x = Weight, y = Height, colour = SmokingStatus) +
-  scale_color_manual(values = c("green", "blue", "red"), na.translate = FALSE) +
-  geom_point(na.rm = TRUE) +
-  labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Smoking status") 
+###################    ggplot ###################################
+# gen <-ggplot(nhanes.df1) +
+#   aes(x = Weight, y = Height, colour = Gender, group = Gender) +
+#   geom_point(na.rm = TRUE) +
+#   labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Gender") 
+#   #geom_smooth( method = "lm")
+#   
+# 
+# diab <- ggplot(nhanes.df1) +
+#   aes(x = Weight, y = Height, colour = Diabetes) +
+#   scale_color_manual(values = c("lightgray", "red"), na.translate = FALSE) +
+#   geom_point(na.rm = TRUE) +
+#   labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Diabetes status") 
+#   
+# 
+# smok <- ggplot(nhanes.df1) +
+#   aes(x = Weight, y = Height, colour = SmokingStatus) +
+#   scale_color_manual(values = c("green", "blue", "red"), na.translate = FALSE) +
+#   geom_point(na.rm = TRUE) +
+#   labs(x = "Weight (kg)", y = "Height (cm)", title = "Relationship Between Weight and Height by Smoking status") 
 
 #plot_grid(gen, diab, smok, ncol = 3)
+#################################################################
 
+
+#base R plots
+plot(nhanes.df1$Weight, nhanes.df1$Height,
+     col = ifelse(nhanes.df1$Gender == "male", "blue", "pink"),
+     pch = 16,
+     xlab = "Weight (kg)", ylab = "Height (cm)", 
+     main = "Relationship Between Weight and Height by Gender")
+legend("bottomright", legend = c("Male", "Female"), fill = c("blue", "pink"))
+
+plot(nhanes.df1$Weight, nhanes.df1$Height,
+     col = ifelse(nhanes.df1$Diabetes == "Yes", "blue", "gray"), 
+     pch = ifelse(nhanes.df1$Diabetes == "Yes", 16,2),
+     xlab = "Weight (kg)", ylab = "Height (cm)", 
+     main = "Relationship Between Weight and Height by Diabetes")
+legend("bottomright", legend = c("Yes", "No"), fill = c("blue", "gray"))
+
+colors <- c("Current" = "red", "Never" = "green", "Former" = "blue")
+plot(nhanes.df1$Weight, nhanes.df1$Height,
+     col = colors[nhanes.df1$SmokingStatus], 
+     pch = 16,
+     xlab = "Weight (kg)", ylab = "Height (cm)", 
+     main = "Relationship Between Weight and Height by Diabetes")
+legend("bottomright", legend = c("Current", "Former", "Never"), fill = c("red", "blue", "green"))
 #################### t-tests -----
 # t-test and make conclusions on the relationship between them based on P-Value
 # Age and Gender
@@ -149,5 +176,9 @@ t_test_alc_rel <- t.test(AlcoholYear ~ RelationshipStatus, data = nhanes.df1)
 #2 Single                  63.5
 
 
+
 ## github link : https://github.com/himabindu-github/hackbio/tree/main/Stage_2
+## linkedin post : https://www.linkedin.com/feed/update/urn:li:activity:7299658541093527553/
+
+
 ###############################################
