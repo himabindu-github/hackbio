@@ -1,4 +1,7 @@
 # Cancer data: Tumor Classification and Clustering Analysis
+The analysis was divided into two parts, each performed in separate R scripts:
+- Classification using Logistic Regression and Random Forest.
+- PCA and K-means Clustering.
 ### Dataset Overview
 The dataset consists of cancer-related data, where the goal is to classify tumors as either Malignant or Benign. The features provided include various physical characteristics of the tumors, such as area, perimeter, smoothness, and others.
 
