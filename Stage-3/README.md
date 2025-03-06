@@ -29,9 +29,18 @@ Before applying machine learning models, PCA was used to reduce the complexity o
 
 - PCA Result: The data was reduced to two main components (PC1 and PC2), which simplified the visualization.
 PCA Visualization: The plot showed an overlap between the benign and malignant groups, suggesting that these two categories aren't perfectly separable in the original feature space.
-- K-means Clustering
+### K-means Clustering
 After applying PCA, K-means clustering was used to divide the patients into two groups based on similarities in the data. The goal was to see if K-means could identify natural clusters of patients, which might correspond to the benign and malignant groups.
 
+### Determining the Optimal Number of Clusters
+To determine the optimal number of clusters, we applied two methods: Within-Cluster Sum of Squares (WSS) and Silhouette Analysis from factoextra library.
+
+- WSS (Elbow Method):
+We used the WSS method to visualize how the sum of squared distances within each cluster decreases as the number of clusters increases. The "elbow" of the curve indicated the most appropriate number of clusters. This method suggested that 2 clusters was the optimal choice, as the WSS reduction rate slowed after 2 clusters.
+- Silhouette Method:
+The silhouette width measures the quality of clustering by assessing both the cohesion (how close the points within a cluster are) and separation (how distinct the clusters are). Based on silhouette analysis, 2 clusters provided the highest average silhouette width, indicating the best balance between cohesion and separation.
+
+### Clustering Results
 - Clustering Outcome: K-means effectively separated the patients into two distinct clusters.
 - Cluster Interpretation: The clusters may correspond to benign and malignant tumors.
 
