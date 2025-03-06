@@ -163,21 +163,3 @@ fviz_silhouette(silhouette_result_3)
 
 
 
-table(kmeans_result$cluster)
-table(test_data$diagnosis)
-# Assuming you have the correct true labels and cluster labels
-library(fpc)
-
-# True labels (e.g., test_data$diagnosis) and predicted clusters (e.g., kmeans_result$cluster)
-true_labels <- test_data$diagnosis  # Replace with your true labels
-predicted_clusters <- kmeans_result$cluster  # Replace with your clustering result
-
-# Ensure that both true_labels and predicted_clusters are factors
-true_labels <- factor(true_labels)
-predicted_clusters <- factor(predicted_clusters)
-
-# Calculate Adjusted Rand Index (ARI)
-ari_result <- adjustedRandIndex(true_labels, predicted_clusters)
-
-# Print the result
-print(ari_result)
