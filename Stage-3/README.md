@@ -1,5 +1,5 @@
 # Cancer data: Tumor Classification and Clustering Analysis
-The analysis was divided into two parts, each performed in separate R scripts:
+The analysis was divided into two parts, each performed in separate R scripts: classify_cancer_data.R and pca_cancerdata.R
 - Classification using Logistic Regression and Random Forest.
 - PCA and K-means Clustering.
 ### Dataset Overview
