@@ -42,6 +42,8 @@ After applying PCA, K-means clustering was used to divide the patients into two 
 ### Clustering Evaluation and Optimal Configuration
 - Silhouette Width:
 The silhouette width helped determine the quality of the clusters. Based on this, 2 clusters provided the best separation, with Cluster 2 showing a higher silhouette width.
+- Dunn Index:
+The Dunn Index also supports the optimal choice of 2 clusters. It measures the separation between clusters and the compactness within clusters. The highest Dunn Index was achieved with 2 clusters, indicating that this configuration offers the best separation between groups. As the number of clusters increased, the Dunn Index decreased. This suggests that while increasing the number of clusters might lead to more specific groupings, it also causes poorer separation between the clusters, resulting in less meaningful groupings.
 - 3 Clusters:
 Adding a third cluster might improve the grouping by capturing borderline cases or distinguishing between different tumor subtypes. These clusters could represent uncertain or borderline cases.
 
