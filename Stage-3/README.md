@@ -16,6 +16,14 @@ Both models performed well with high AUC values, suggesting they are good at dis
 - Accuracy:
 Both models showed high accuracy, confirming that they are effective at predicting the correct diagnosis based on the tumor's physical features.
 
+### Model Performance table
+
+|Model               | Accuracy| Precision| Sensitivity| Specificity| F1_Score|       AUC|
+|:-------------------|--------:|---------:|-----------:|-----------:|--------:|---------:|
+|Random Forest       |   0.9524| 0.9827586|   0.9193548|   0.9905660|    0.950| 0.9891966|
+|Logistic Regression |   0.9583| 0.9365079|   0.9516129|   0.9622642|    0.944| 0.9569385|
+
+
 ### PCA (Principal Component Analysis)
 Before applying machine learning models, PCA was used to reduce the complexity of the data by compressing multiple features into fewer components (2 components in this case). This makes it easier to analyze and visualize the data:
 
@@ -53,9 +61,4 @@ Adding a third cluster might improve the grouping by capturing borderline cases 
 
 
 
-### Model Performance table
 
-|Model               | Accuracy| Precision| Sensitivity| Specificity| F1_Score|       AUC|
-|:-------------------|--------:|---------:|-----------:|-----------:|--------:|---------:|
-|Random Forest       |   0.9524| 0.9827586|   0.9193548|   0.9905660|    0.950| 0.9891966|
-|Logistic Regression |   0.9583| 0.9365079|   0.9516129|   0.9622642|    0.944| 0.9569385|
