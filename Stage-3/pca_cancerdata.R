@@ -99,15 +99,6 @@ kmeans_cluster3_plot <- fviz_cluster(kmeans_result_3, data = pca_cancer$x[, 1:2]
 ggsave("kmeans-3clustering-pca.png", plot = kmeans_cluster_plot, width = 8, height = 6, dpi = 300)
 
 
-##############################################################################
-predicted_clusters <- factor(kmeans_result$cluster)  # Convert to factor
-actual_labels <- factor(test_data$diagnosis)  # Actual labels (0 or 1)
-levels(predicted_clusters) <- levels(actual_labels)
-# Create confusion matrix
-conf_matrix <- confusionMatrix(predicted_clusters, actual_labels)
-
-# Print the confusion matrix
-print(conf_matrix)
 
 ##############################################################################
 # Validate the clustering with additional metrics like the Dunn Index 
